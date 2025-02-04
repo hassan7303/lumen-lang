@@ -75,6 +75,7 @@
             ]
         }
     },
+    "prefer-stable": true,
     "scripts": {
     "post-install-cmd": [
         "@php artisan vendor:publish --provider=\"LumenLang\\Providers\\ValidationServiceProvider\""
