@@ -3,6 +3,7 @@
 namespace lumenLang;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Log;
 
 class ValidationServiceProvider extends ServiceProvider
 {
