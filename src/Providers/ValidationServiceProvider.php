@@ -26,7 +26,7 @@ class ValidationServiceProvider extends ServiceProvider
             mkdir($langPath, 0755, true);
         }
         
-        $packageLangFile = __DIR__ . '/translations/fa.php';
+        $packageLangFile = __DIR__ . '/../Translations/validation.php';
 
         $destinationLangFile = $langPath . '/validation.php';
 
