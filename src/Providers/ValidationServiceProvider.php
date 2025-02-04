@@ -8,30 +8,34 @@ class ValidationServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $bootstrapPath = base_path('bootstrap/app.php');
+        try {
+            Log::info('ValidationServiceProvider is booting...');
 
-        $content = file_get_contents($bootstrapPath);
-        if (!str_contains($content, '$app->setLocale(')) {
-            $newContent = str_replace(
-                'return $app;',
-                "\$app->setLocale(env('APP_LOCALE', 'fa'));\n\nreturn \$app;",
-                $content
-            );
+            $langPath = base_path('resources/lang/fa');
+            
+            if (!is_dir($langPath)) {
+                mkdir($langPath, 0755, true);
+                Log::info("Created lang directory at: {$langPath}");
+            }
 
-            file_put_contents($bootstrapPath, $newContent);
-        }
+            $packageLangFile = __DIR__ . '/../../translations/fa/validation.php';
+            $destinationLangFile = $langPath . '/validation.php';
 
-        $langPath = base_path('resources/lang/fa');
-        if (!is_dir($langPath)) {
-            mkdir($langPath, 0755, true);
-        }
-        
-        $packageLangFile = __DIR__ . '/../Translations/fa/validation.php';
+            if (!file_exists($destinationLangFile)) {
+                if (copy($packageLangFile, $destinationLangFile)) {
+                    Log::info("Copied language file to: {$destinationLangFile}");
+                } else {
+                    Log::error("Failed to copy language file from {$packageLangFile} to {$destinationLangFile}");
+                }
+            } else {
+                Log::info("Language file already exists: {$destinationLangFile}");
+            }
 
-        $destinationLangFile = $langPath . '/validation.php';
+            app()->setLocale(env('APP_LOCALE', 'fa'));
+            Log::info('Locale has been set to fa');
 
-        if (!file_exists($destinationLangFile)) {
-            copy($packageLangFile, $destinationLangFile);
+        } catch (\Exception $e) {
+            Log::error('Error in ValidationServiceProvider: ' . $e->getMessage());
         }
     }
 }
