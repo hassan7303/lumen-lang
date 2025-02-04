@@ -1,0 +1,83 @@
+{
+    "name": "hassan7303/lumen-validation-fa",
+    "description": "A package to translate Lumen validation messages to Persian.",
+    "keywords": [
+        "lumen",
+        "validation",
+        "persian",
+        "fa", 
+        "farsi", 
+        "translate", 
+        "messages", 
+        "language", 
+        "localization", 
+        "iran", 
+        "iranian", 
+        "iranian-developers", 
+        "iranian-developer", 
+        "iranian-developer-community", 
+        "iranian-developer-communities", 
+        "iranian-developers-community", 
+        "iranian-developers-communities", 
+        "iranian-developers-community-iran", 
+        "iranian-developers-communities-iran", 
+        "iranian-developers-community-iranian", 
+        "iranian-developers-communities-iranian", 
+        "iranian-developers-community-iranian-developers", 
+        "iranian-developers-communities-iranian-developers", 
+        "iranian-developers-community-iranian-developer", 
+        "iranian-developers-communities-iranian-developer", 
+        "iranian-developers-community-iranian-developers-iran", 
+        "iranian-developers-communities-iranian-developers-iran", 
+        "iranian-developers-community-iranian-developer-iran", 
+        "iranian-developers-communities-iranian-developer-iran", 
+        "iranian-developers-community-iranian-developers-iranian", 
+        "iranian-developers-communities-iranian-developers-iranian", 
+        "iranian-developers-community-iranian-developer-iranian", 
+        "iranian-developers-communities-iranian-developer-iranian", 
+        "iranian-developers-community-iranian-developers-iranian-developers", 
+        "iranian-developers-communities-iranian-developers-iranian-developers", 
+        "iranian-developers-community-iranian-developer-iranian-developers", 
+        "iranian-developers-communities-iranian-developer-iranian-developers", 
+        "iranian-developers-community-iranian-developers-iranian-developer", 
+        "iranian-developers-communities-iranian-developers-iranian-developer", 
+        "iranian-developers-community-iranian-developer-iranian-developer", 
+        "iranian-developers-communities-iranian-developer-iranian-developer", 
+        "iranian-developers-community-iranian-developers-iranian-developer-iran", 
+        "iranian-developers-communities-iranian-developers-iranian-developer-iran", 
+        "iranian-developers-community-iranian-developer-iranian-developers-iran", 
+        "iranian-developers-communities-iranian-developer-iranian-developers-iran", 
+        "iranian-developers-community-iranian-developers-iranian-developer-iranian", 
+        "iranian-developers-communities-iranian-developers-iranian-developer-iranian", 
+        "iranian-developers-community-iranian-developer-iranian-developers-iranian"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hassan Ali Askari",
+            "email": "hassanali7303@email.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "illuminate/translation": "^9.0 || ^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LumenValidationFA\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LumenValidationFA\\Providers\\ValidationServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+    "post-install-cmd": [
+        "@php artisan vendor:publish --provider=\"LumenValidationFA\\Providers\\ValidationServiceProvider\""
+    ]
+}
+}
