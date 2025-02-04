@@ -1,6 +1,6 @@
 <?php
 
-namespace LumenValidationFA;
+namespace lumenLang;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,5 +1,5 @@
 {
-    "name": "hassan7303/lumen-validation-fa",
+    "name": "hassan7303/lumen-lang",
     "description": "A package to translate Lumen validation messages to Persian.",
     "keywords": [
         "lumen",
@@ -65,19 +65,19 @@
     },
     "autoload": {
         "psr-4": {
-            "LumenValidationFA\\": "src/"
+            "LumenLang\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "LumenValidationFA\\Providers\\ValidationServiceProvider"
+                "LumenLang\\Providers\\ValidationServiceProvider"
             ]
         }
     },
     "scripts": {
     "post-install-cmd": [
-        "@php artisan vendor:publish --provider=\"LumenValidationFA\\Providers\\ValidationServiceProvider\""
+        "@php artisan vendor:publish --provider=\"LumenLang\\Providers\\ValidationServiceProvider\""
     ]
 }
 }
